@@ -2,24 +2,30 @@
 const assert = require('chai').assert; // require('assert') default assert library for node
 const app = require('../app');
 
+var sayHelloResult = app.sayHello();
+var addNumbersResult = app.addNumbers(5, 15);
+
 describe('App', function(){
-    it('sayHello should return hello', function(){
-      let result = app.sayHello();
-      assert.equal(result, 'hello');
+
+    describe('sayHello', function(){
+        it('sayHello should return hello', function(){
+          assert.equal(sayHelloResult, 'hello');
+        });
+
+        it('sayHello should return type string', function(){
+          assert.typeOf(sayHelloResult, 'string');
+        });
     });
 
-    it('sayHello should return type string', function(){
-      let result = app.sayHello();
-      assert.typeOf(result, 'string');
+    describe('addNumbers', function(){
+        it('addNumbers should add two given numbers', function(){
+          assert.isAbove(addNumbersResult, 15);
+        })
+
+        it('addNumbers should return type number', function(){
+           assert.typeOf(addNumbersResult, 'number');
+        });
     });
 
-    it('addNumbers should add two given numbers', function(){
-      let result = app.addNumbers(5, 15);
-      assert.isAbove(result, 15);
-    })
 
-    it('addNumbers should return type number', function(){
-       let result = app.addNumbers(5,5);
-       assert.typeOf(result, 'number');
-    })
 });

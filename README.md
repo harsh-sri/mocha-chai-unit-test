@@ -1,2 +1,7 @@
 # mocha-chai-unit-test
-unit test case implementation for nodejs app using mocha and chai assert library.
+
+Unit test case implementation for nodejs app using mocha and chai assert library. 
+
+Steps:
+      1: npm install --save-dev
+      2: npm test
